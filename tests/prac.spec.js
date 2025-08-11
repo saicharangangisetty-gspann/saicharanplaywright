@@ -1,0 +1,18 @@
+import {test,expect} from "@playwright/test"
+test.only('practice',async({page})=>{
+await page.goto("https://freelance-learn-automation.vercel.app/signup")
+await page.getByPlaceholder('Name').fill("saicharan")
+await page.getByPlaceholder('Email').fill("charan36367@gmail.com")
+await page.getByPlaceholder('Password').fill("cherry@123")
+await page.locator("(//*[@type='checkbox'])[1]").check()
+await page.locator("(//*[@type='checkbox'])[2]").check()
+await page.locator("(//*[@type='checkbox'])[4]").check()
+const dropdwon=await page.locator("#state")
+await dropdwon.selectOption({value:'Andhra Pradesh'})
+await page.locator("#gender1").check()
+const hobbies=await page.locator("#hobbies")
+await hobbies.selectOption(['Playing','Reading'])
+await page.getByRole('button',{name:'Sign up'}).click()
+
+//await expect(page).toHaveURL("https://freelance-learn-automation.vercel.app/login")
+})
