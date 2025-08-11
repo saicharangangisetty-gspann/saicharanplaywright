@@ -13,6 +13,5 @@ await page.locator("#gender1").check()
 const hobbies=await page.locator("#hobbies")
 await hobbies.selectOption(['Playing','Reading'])
 await page.getByRole('button',{name:'Sign up'}).click()
-
-//await expect(page).toHaveURL("https://freelance-learn-automation.vercel.app/login")
+await expect(page).toHaveURL("https://freelance-learn-automation.vercel.app/login")
 })
